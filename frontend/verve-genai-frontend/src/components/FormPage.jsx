@@ -111,29 +111,6 @@ function FormPage() {
         <div className="form-fields flex flex-col mt-5">
           <div className="form-fields-container">
             <div className="form-fields-header text-left">
-              What's your target age group?
-            </div>
-            <div className="form-fields-input">
-              <input
-                type="range"
-                min={0}
-                max="100"
-                value={sliderValue}
-                onChange={handleSliderChange}
-                className="range range-xs mt-5"
-                step="25"
-              />
-              <div className="flex justify-between px-2 text-xs mt-2">
-                <span>Children</span>
-                <span>Teenager</span>
-                <span>Adults</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="form-fields flex flex-col mt-5">
-          <div className="form-fields-container">
-            <div className="form-fields-header text-left">
               Enter your potential competitor:
             </div>
             <div className="form-fields-input flex items-center">
