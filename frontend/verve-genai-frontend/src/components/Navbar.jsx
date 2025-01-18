@@ -1,11 +1,12 @@
 import VideoWalkThrough from "../assets/VideoWalkThroughIcon.png";
 import GithubLogo from "../assets/github-icon.png";
+import WebLogo from "../assets/web-logo.png";
 export default function Navbar() {
   return (
     <>
       <div className="navbar-container flex items-center justify-between">
         <div className="brand text-2xl font-semibold flex items-center">
-        <img src={GithubLogo} alt="Video Walkthrough" className="w-6 h-6 mr-4" />
+        <img src={WebLogo} alt="Video Walkthrough" className="w-10 h-10 mr-2" />
           ART Analyser
           </div>
         <div className="flex demo">

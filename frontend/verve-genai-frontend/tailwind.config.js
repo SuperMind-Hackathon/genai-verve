@@ -8,6 +8,6 @@ export default {
   daisyui: {
     themes: [ "corporate"],
   },
-  plugins: [daisyui],
+  plugins: [daisyui]
 }
 
