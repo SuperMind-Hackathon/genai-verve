@@ -1,0 +1,4 @@
+verve-genai-backend/env/*
+verve-genai-backend/backend/api/__pycache__/*
+verve-genai-backend/backend/api/migrations/__pycache__/*
+verve-genai-backend/backend/backend/__pycache__/*
