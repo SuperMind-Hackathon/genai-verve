@@ -19,6 +19,14 @@ function App() {
           <Route path="/analysis" element={<AnalysisPage/>}/>
         </Routes>
       </BrowserRouter>
+      <footer className="footer footer-center bg-gray-100 text-base-content p-4 rounded-lg">
+        <aside>
+          <p>
+            Copyright © {new Date().getFullYear()} - All right reserved by
+            Verve
+          </p>
+        </aside>
+      </footer>
     </>
   );
 }
