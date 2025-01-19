@@ -47,7 +47,7 @@ export default function Navbar() {
           </div>
         </dialog>
         <a
-          href="https://github.com/hemant-mistry/supermind-assignment-frontend"
+          href="https://github.com/hemant-mistry/genai-verve"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-neutral btn-sm rounded-lg flex items-center text-white"
