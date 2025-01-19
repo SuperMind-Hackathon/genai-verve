@@ -24,7 +24,7 @@ export default function Navbar() {
             <iframe
               width="100%"
               height="315"
-              src="https://www.youtube.com/embed/YfwsnMbPyh8?si=y_kJ_TFilEqeV29s"
+              src="https://www.youtube.com/embed/eu1PRr3a2ik?si=HBRyDx5_l5LHCmAK"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
