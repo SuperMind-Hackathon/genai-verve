@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Bar, Pie, Line } from "react-chartjs-2";
 import AdHook from "../assets/ad-hook.png";
-import GeminiIcon from "../assets/gemini-icon.png";
 import AdCTA from "../assets/ad-cta.png";
 
 import {
@@ -150,46 +149,6 @@ function AnalysisPage({ setLoading }) {
                   {hooksData.Reasoning}
                 </div>
               </div>
-              <div className="suggest-more-button text-left mt-5">
-                <button
-                  className="btn btn-sm btn-neutral rounded-lg"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
-                >
-                  <img
-                    src={GeminiIcon}
-                    alt="Video Walkthrough"
-                    className="w-5 h-5 mr-2"
-                  />
-                  Get more AI Powered suggestions
-                </button>
-                <dialog id="my_modal_3" className="modal">
-                  <div className="modal-box">
-                    <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                        ✕
-                      </button>
-                    </form>
-                    <h3 className="font-bold text-lg">
-                      Describe the changes you want
-                    </h3>
-                    <textarea
-                      className="textarea textarea-bordered mt-5"
-                      placeholder="Describe your changes and let AI do the magic!"
-                      cols={65}
-                      rows={4}
-                    ></textarea>
-                    <div className="flex justify-end">
-                      <button className="btn btn-sm rounded-lg mt-2">
-                        Submit
-                      </button>
-                    </div>
-                    
-                  </div>
-                </dialog>
-              </div>
             </div>
           </div>
           <div className="target-audience-card flex flex-col md:flex-row w-full p-4 rounded-lg mt-10">
@@ -223,45 +182,6 @@ function AnalysisPage({ setLoading }) {
                     {ctrData.Reasoning}
                   </div>
                 </div>
-                <div className="suggest-more-button text-left mt-5">
-                <button
-                  className="btn btn-sm btn-neutral rounded-lg"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
-                >
-                  <img
-                    src={GeminiIcon}
-                    alt="Video Walkthrough"
-                    className="w-5 h-5 mr-2"
-                  />
-                  Get more AI Powered suggestions
-                </button>
-                <dialog id="my_modal_3" className="modal">
-                  <div className="modal-box">
-                    <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                        ✕
-                      </button>
-                    </form>
-                    <h3 className="font-bold text-lg">
-                      Describe the changes you want
-                    </h3>
-                    <textarea
-                      className="textarea textarea-bordered mt-5"
-                      placeholder="Describe your changes and let AI do the magic!"
-                      cols={65}
-                      rows={4}
-                    ></textarea>
-                    <div className="flex justify-end">
-                      <button className="btn btn-sm rounded-lg mt-2">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </dialog>
-              </div>
               </div>
               <div className="target-audience-image hidden md:block">
                 <img
