@@ -6,7 +6,7 @@ import WebLogo from "../assets/web-logo.png";
 export default function Navbar() {
   return (
     <div className="navbar-container flex flex-row items-center justify-between p-4">
-      <div className="brand text-sm font-semibold flex items-center mb-4 md:mb-0">
+      <div className="brand text-sm md:text-lg font-semibold flex items-center mb-4 md:mb-0">
         <img src={WebLogo} alt="Video Walkthrough" className="w-10 h-10 mr-2" />
         ART Analyser
       </div>
