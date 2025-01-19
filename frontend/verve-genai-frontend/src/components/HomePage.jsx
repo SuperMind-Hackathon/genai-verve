@@ -74,7 +74,7 @@ function HomePage() {
           <ul className="timeline timeline-vertical mt-6 sm:mt-8 lg:mt-10">
             <li>
               <div className="timeline-start text-sm lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5">
-                Login Or Create your account
+              Getting started
               </div>
               <div className="timeline-middle">
                 <svg
@@ -91,9 +91,7 @@ function HomePage() {
                 </svg>
               </div>
               <div className="timeline-end font-lato p-4 sm:p-5 text-custom-gray w-full sm:w-[400px] lg:w-[450px]">
-                To get started, you can log in by entering your email and
-                password, or, if you prefer, you can sign up using your Google
-                account for a quicker registration process.
+              Click on the "Get Started" button to seamlessly navigate to the Trip Planning page, where you’ll be guided through the next steps in generating valuable insights into marketing.
               </div>
               <hr className="bg-accent w-full sm:w-1/2 lg:w-1/3 mx-auto" />
             </li>
@@ -104,7 +102,7 @@ function HomePage() {
                 className="timeline-start text-xl sm:text-2xl lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5"
                 onClick={handleGetStarted}
               >
-                Click on Get Started
+                Enter your Ad details
               </div>
               <div className="timeline-middle">
                 <svg
@@ -121,16 +119,14 @@ function HomePage() {
                 </svg>
               </div>
               <div className="timeline-end font-lato p-4 sm:p-5 text-custom-gray w-full sm:w-[400px] lg:w-[450px]">
-                Click on the "Get Started" button to seamlessly navigate to the
-                Trip Planning page, where you’ll be guided through the next
-                steps in creating your travel itinerary.
+              Provide details about your product, including its category, the intended sales location, and insights into your key competitors and sit back and relax till we fetch you insights
               </div>
               <hr className="bg-accent w-full sm:w-1/2 lg:w-1/3 mx-auto" />
             </li>
             <li>
               <hr className="bg-accent w-full sm:w-1/2 lg:w-1/3 mx-auto" />
               <div className="timeline-start text-xl sm:text-2xl lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5">
-                Enter your plan details
+              Generate insights
               </div>
               <div className="timeline-middle">
                 <svg
@@ -147,18 +143,14 @@ function HomePage() {
                 </svg>
               </div>
               <div className="timeline-end font-lato p-4 sm:p-5 text-custom-gray w-full sm:w-[400px] lg:w-[450px]">
-                Please provide your trip details by entering the destination,
-                the length of your stay, and your budget. This information will
-                help us tailor your itinerary to suit your preferences and
-                ensure that your travel plans are well-organized and within your
-                desired spending limits.
+              We will provide you with valuable insights, including effective hooks and CTAs that have been tested and proven to achieve higher click-through rates, making them the most engaging options
               </div>
               <hr className="bg-accent w-full sm:w-1/2 lg:w-1/3 mx-auto" />
             </li>
             <li>
               <hr className="bg-accent w-full sm:w-1/2 lg:w-1/3 mx-auto" />
               <div className="timeline-start text-xl sm:text-2xl lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5">
-                Build Itinerary
+              Comparative study
               </div>
               <div className="timeline-middle">
                 <svg
@@ -175,9 +167,7 @@ function HomePage() {
                 </svg>
               </div>
               <div className="timeline-end font-lato p-4 sm:p-5 text-custom-gray w-full sm:w-[400px] lg:w-[450px]">
-                Click on the "Build Itinerary" button to let Travelify work its
-                magic by utilizing the Gemini and Places APIs to create a
-                personalized and detailed travel plan for you.
+              A detailed comparison of top competitors, highlighting their strategies, and offering insights on how to leverage attention-grabbing hooks and techniques to effectively attract and engage users.
               </div>
               <hr className="bg-white w-full sm:w-1/2 lg:w-1/3 mx-auto" />
             </li>
