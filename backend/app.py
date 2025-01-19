@@ -32,6 +32,23 @@ def get_response():
     analysis = langflowsetup.start_flow(message,endpoint=os.getenv("ANALYSIS_URL"),passcode=os.getenv('ANALYSIS_TOKEN'))
     return jsonify({"ctr": ctr, 'hooks': hooks, 'analysis': analysis})
 
+@app.route('/api/gethooks', methods=['POST'])
+def get_hooks():
+    data = request.get_json()
+    message = json.dumps(data, indent=4)
+    hooks = langflowsetup.start_flow(message,endpoint=os.getenv("CTR_URL_NEW"),passcode=os.getenv('CTR_TOKEN_NEW'))
+
+    return jsonify({'newHooks': hooks})
+
+@app.route('/api/getctr', methods=['POST'])
+def get_ctrs():
+    data = request.get_json()
+    message = json.dumps(data, indent=4)
+    ctrs = langflowsetup.start_flow(message,endpoint=os.getenv("CTR_URL_NEW"),passcode=os.getenv('CTR_TOKEN_NEW'))
+
+    return jsonify({'newCtrs': ctrs})
+
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
