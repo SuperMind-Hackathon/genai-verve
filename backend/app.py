@@ -10,10 +10,16 @@ def get_response():
     if not data or 'message' not in data:
         return jsonify({"error": "Message not provided in the request."}), 400
 
-    message = data['message']
-    response = langflowsetup.start_flow(message)
 
-    return jsonify({"response": response})    
+    input = ''
+    for key in data.keys():
+        input += "".join(data[key])
+
+
+    # CTR call 
+    # response = langflowsetup.start_flow(message, )
+
+    return jsonify({"response": input}) 
 
 @app.route('/')
 def hello_world():
