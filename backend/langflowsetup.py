@@ -4,11 +4,11 @@ import requests
 from typing import Optional
 
 # Retrieve configuration from environment variables
-BASE_API_URL = os.getenv("BASE_API_URL")
-LANGFLOW_ID = os.getenv("LANGFLOW_ID")
-FLOW_ID = os.getenv("FLOW_ID")
-APPLICATION_TOKEN = os.getenv("APPLICATION_TOKEN")
-ENDPOINT = os.getenv("ENDPOINT")
+BASE_API_URL = os.getenv("BASE_API_URL") if not None else ''
+LANGFLOW_ID = os.getenv("LANGFLOW_ID") if not None else ''
+FLOW_ID = os.getenv("FLOW_ID") if not None else ''
+APPLICATION_TOKEN = os.getenv("APPLICATION_TOKEN") if not None else ''
+ENDPOINT = os.getenv("ENDPOINT") if not None else ''
 
 TWEAKS = {
     "ChatInput-LHXvo": {},
@@ -44,7 +44,7 @@ def run_flow(
     :param application_token: Application Token for authentication
     :return: The JSON response from the flow
     """
-    api_url = f"{BASE_API_URL}/lf/{LANGFLOW_ID}/api/v1/run/{FLOW_ID}?stream=false"
+    api_url = endpoint
 
     payload = {
         "input_value": message,
@@ -61,7 +61,7 @@ def run_flow(
     return response.json()
 
 
-def start_flow(message: str, endpoint: str = ENDPOINT, tweaks: Optional[dict] = TWEAKS):
+def start_flow(message: str, endpoint: str = ENDPOINT, tweaks: Optional[dict] = TWEAKS, passcode = ''):
     """
     Main function to call the flow.
 
@@ -74,7 +74,8 @@ def start_flow(message: str, endpoint: str = ENDPOINT, tweaks: Optional[dict] = 
         response = run_flow(
             message=message,
             endpoint=endpoint,
-            tweaks=tweaks
+            tweaks=tweaks,
+            application_token=passcode
         )
         # Extract the response message
         response_message = response["outputs"][0]["outputs"][0]["results"]["message"]["text"]
