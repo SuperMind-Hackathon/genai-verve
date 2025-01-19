@@ -1,25 +1,30 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import langflowsetup
 
 app = Flask(__name__)
+CORS(app)
 
-@app.route("/api/getresponse", methods = ['POST'])
+@app.route("/api/getresponse", methods=['POST'])
 def get_response():
     data = request.get_json()
 
-    if not data or 'message' not in data:
-        return jsonify({"error": "Message not provided in the request."}), 400
+    productDescription = data.get('productDescription')
+    customerSegment = data.get('customerSegment')
+    adLocation = data.get('adLocation')
+    ageGroup = data.get('ageGroup')
+    competitor = data.get('competitor')
 
-
-    input = ''
-    for key in data.keys():
-        input += "".join(data[key])
-
+    print(f"Product Description: {productDescription}")
+    print(f"Customer Segment: {customerSegment}")
+    print(f"Ad Location: {adLocation}")
+    print(f"Age Group: {ageGroup}")
+    print(f"Competitor: {competitor}")
 
     # CTR call 
     # response = langflowsetup.start_flow(message, )
 
-    return jsonify({"response": input}) 
+    return jsonify({"response": adLocation})
 
 @app.route('/')
 def hello_world():
