@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import langflowsetup
-
+import os
 app = Flask(__name__)
 CORS(app)
+import json
 
 @app.route("/api/getresponse", methods=['POST'])
 def get_response():
@@ -12,19 +13,24 @@ def get_response():
     productDescription = data.get('productDescription')
     customerSegment = data.get('customerSegment')
     adLocation = data.get('adLocation')
-    ageGroup = data.get('ageGroup')
     competitor = data.get('competitor')
 
-    print(f"Product Description: {productDescription}")
-    print(f"Customer Segment: {customerSegment}")
-    print(f"Ad Location: {adLocation}")
-    print(f"Age Group: {ageGroup}")
-    print(f"Competitor: {competitor}")
+    message = json.dumps({
+        'productDescription' : productDescription,
+        'customerSegment' : customerSegment,
+        'adLocation' : adLocation,
+        'competitor': competitor,
+    }, indent=4)
 
-    # CTR call 
-    # response = langflowsetup.start_flow(message, )
 
-    return jsonify({"response": adLocation})
+
+    
+    ctr = langflowsetup.start_flow(message,endpoint=os.getenv("CTR_URL"),passcode=os.getenv('CTR_TOKEN'))
+    
+    hooks = langflowsetup.start_flow(message,endpoint=os.getenv("HOOKS_URL"),passcode=os.getenv('HOOKS_TOKEN'))
+
+    analysis = langflowsetup.start_flow(message,endpoint=os.getenv("ANALYSIS_URL"),passcode=os.getenv('ANALYSIS_TOKEN'))
+    return jsonify({"ctr": ctr, 'hooks': hooks, 'analysis': analysis})
 
 @app.route('/')
 def hello_world():
