@@ -84,33 +84,32 @@ function AnalysisPage() {
     <>
       <div className="analysis-page">
         <div className="competitor-analysis text-left mt-10">
-          <div className="competitor-analysis-header text-3xl">
+          <div className="competitor-analysis-header text-2xl md:text-3xl">
             AI-Generated Suggestions
           </div>
         </div>
         <div className="divider w-1/3 gray-200"></div>
         <div className="suggestions-container flex flex-col justify-between mt-10">
-          <div className="target-audience-card flex flex-row w-full p-4 rounded-lg">
-            {" "}
-            <div className="target-audience-image">
+          <div className="target-audience-card flex flex-col md:flex-row w-full p-4 rounded-lg">
+            <div className="target-audience-image hidden md:block">
               <img
                 src={AdHook}
                 alt="Ad Hook Image"
                 className="w-full max-w-md object-contain"
               />
             </div>
-            <div className="hook-details flex flex-col p-10">
-              <div className="suggested-hook-title text-2xl text-left">
+            <div className="hook-details flex flex-col p-4 md:p-10">
+              <div className="suggested-hook-title text-xl md:text-2xl text-left">
                 Hook Details
               </div>
-              <div className="suggested-hook-value text-left mt-2 text-lg">
+              <div className="suggested-hook-value text-left mt-2 text-md md:text-lg">
                 Suggested hook:{" "}
                 <span className="font-[500]">
                   This is a sample awesome hook!
                 </span>
               </div>
-              <div className="suggested-hook-justification text-left mt-2 max-w-lg">
-                <div className="suggested-hook-justification-title text-lg">
+              <div className="suggested-hook-justification text-left mt-2 text-sm md:text-base max-w-lg">
+                <div className="suggested-hook-justification-title text-md md:text-lg">
                   Why are we suggesting it?
                 </div>
                 <div className="suggested-hook-justification-desc mt-2">
@@ -164,63 +163,64 @@ function AnalysisPage() {
               </div>
             </div>
           </div>
-          <div className="target-audience-card flex flex-row w-full p-4 rounded-lg mt-10">
-            {" "}
-            <div className="hook-details flex flex-col p-10">
-              <div className="suggested-hook-title text-2xl text-left">
-                CTA Details
-              </div>
-              <div className="suggested-hook-value text-left mt-2 text-lg">
-                Suggested CTA:{" "}
-                <span className="font-[500]">
-                  This is a sample awesome CTA!
-                </span>
-              </div>
-              <div className="suggested-hook-justification text-left mt-2 max-w-lg">
-                <div className="suggested-hook-justification-title text-lg">
-                  Why are we suggesting it?
+          <div className="target-audience-card flex flex-col md:flex-row w-full p-4 rounded-lg mt-10">
+            <div className="hook-details flex flex-col md:flex-row p-4 md:p-10 w-full">
+              <div className="w-full md:w-1/2">
+                <div className="suggested-hook-title text-xl md:text-2xl text-left">
+                  CTA Details
                 </div>
-                <div className="suggested-hook-justification-desc mt-2">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged
+                <div className="suggested-hook-value text-left mt-2 text-md md:text-lg">
+                  Suggested CTA:{" "}
+                  <span className="font-[500]">
+                    This is a sample awesome CTA!
+                  </span>
+                </div>
+                <div className="suggested-hook-justification text-left mt-2 text-sm md:text-base max-w-lg">
+                  <div className="suggested-hook-justification-title text-md md:text-lg">
+                    Why are we suggesting it?
+                  </div>
+                  <div className="suggested-hook-justification-desc mt-2">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged
+                  </div>
+                </div>
+                <div className="suggest-more-button text-left mt-5">
+                  <button className="btn btn-sm btn-neutral rounded-lg">
+                    <img
+                      src={GeminiIcon}
+                      alt="Video Walkthrough"
+                      className="w-5 h-5 mr-2"
+                    />
+                    Get more AI Powered suggestions
+                  </button>
                 </div>
               </div>
-              <div className="suggest-more-button text-left mt-5">
-                <button className="btn btn-sm btn-neutral rounded-lg">
-                  <img
-                    src={GeminiIcon}
-                    alt="Video Walkthrough"
-                    className="w-5 h-5 mr-2"
-                  />
-                  Get more AI Powered suggestions
-                </button>
+              <div className="target-audience-image w-full md:w-1/2 flex justify-center md:justify-end">
+                <img
+                  src={AdCTA}
+                  alt="Ad Hook Image"
+                  className="w-full max-w-md object-contain"
+                />
               </div>
-            </div>
-            <div className="target-audience-image">
-              <img
-                src={AdCTA}
-                alt="Ad Hook Image"
-                className="w-full max-w-md object-contain"
-              />
             </div>
           </div>
         </div>
         <div className="competitor-analysis text-left mt-10">
-          <div className="competitor-analysis-header text-3xl">
+          <div className="competitor-analysis-header text-2xl md:text-3xl">
             Competitor Analysis
           </div>
         </div>
         <div className="divider w-1/3 gray-200"></div>
-        <div className="visual-analysis-container flex flex-row items-center p-10">
+        <div className="visual-analysis-container flex flex-col md:flex-row items-center p-4 md:p-10">
           <div className="chart-container max-w-xs">
             <Pie data={pieData} />
           </div>
-          <div className="chart-description text-right max-w-lg ml-auto text-lg pr-10">
+          <div className="chart-description text-left md:text-right max-w-lg ml-auto text-sm md:text-lg pr-0 md:pr-10 mt-4 md:mt-0">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type

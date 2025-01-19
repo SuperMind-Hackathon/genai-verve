@@ -1,44 +1,71 @@
-import React from "react";
+import React, { useRef } from "react";
 import DataHeroImage from "../assets/data-hero-image.jpg";
+import { useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 function HomePage() {
+  const navigate = useNavigate();
+  const quickStartRef = useRef(null);
+
+  const handleGetStarted = () => {
+    navigate("/form-page");
+  };
+
+  const handleScrollToQuickStart = () => {
+    scroller.scrollTo("how-it-works-component", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
+
   return (
     <>
       {/* Hero components starts */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-[100px]">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-[10px] md:pt-[100px]">
         <div className="flex flex-col md:flex-row items-center">
           {/* Text Section */}
           <div className="hero-section flex flex-col max-w-2xl md:w-1/2">
-            <h1 className="text-6xl font-[500] leading-tight mb-4 text-left">
+            <h1 className="text-3xl md:text-6xl font-[500] leading-tight mb-4 text-left">
               The best way <br /> to showcase <br /> your project.
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8 text-left">
               Here you can put a short description about your project.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn btn-primary btn-sm rounded-lg text-white">
+              <button
+                className="btn btn-primary btn-sm rounded-lg text-white"
+                onClick={handleGetStarted}
+              >
                 Get started
               </button>
-              <button className="btn btn-ghost btn-sm rounded-lg">
+              <button
+                className="btn btn-ghost btn-sm rounded-lg"
+                onClick={handleScrollToQuickStart}
+              >
                 See how it works
               </button>
             </div>
           </div>
 
           {/* Image Section */}
-          <div className="hero-image hidden md:flex md:w-1/2 justify-end"></div>
-          <img
-                  src={DataHeroImage}
-                  alt="Landing Page Robot"
-                  className="w-full max-w-md object-contain"
-                />
+          <div className="hero-image hidden md:flex md:w-1/2 justify-end">
+            <img
+              src={DataHeroImage}
+              alt="Landing Page Robot"
+              className="w-full max-w-md object-contain"
+            />
+          </div>
         </div>
       </div>
       {/* Hero components ends */}
 
       {/* FAQs/How it work? components starts */}
 
-      <div className="how-it-works-component mt-[100px] mb-10">
+      <div
+        className="how-it-works-component mt-[100px] mb-10"
+        ref={quickStartRef}
+      >
         {/* Travelify Quick Guide section */}
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="text-center text-4xl font-[500]">
@@ -46,7 +73,7 @@ function HomePage() {
           </div>
           <ul className="timeline timeline-vertical mt-6 sm:mt-8 lg:mt-10">
             <li>
-              <div className="timeline-start text-xl sm:text-2xl lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5">
+              <div className="timeline-start text-sm lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5">
                 Login Or Create your account
               </div>
               <div className="timeline-middle">
@@ -73,7 +100,10 @@ function HomePage() {
 
             <li>
               <hr className="bg-accent w-full sm:w-1/2 lg:w-1/3 mx-auto" />
-              <div className="timeline-start text-xl sm:text-2xl lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5">
+              <div
+                className="timeline-start text-xl sm:text-2xl lg:text-3xl font-lato mr-3 sm:mr-4 lg:mr-5"
+                onClick={handleGetStarted}
+              >
                 Click on Get Started
               </div>
               <div className="timeline-middle">

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function FormPage() {
   const [sliderValue, setSliderValue] = useState(25);
-  const [productDescription, setProductDescription] = useState('');
-  const [customerSegment, setCustomerSegment] = useState('');
-  const [adLocation, setAdLocation] = useState('');
-  const [competitor, setCompetitor] = useState('');
+  const [productDescription, setProductDescription] = useState("");
+  const [customerSegment, setCustomerSegment] = useState("");
+  const [adLocation, setAdLocation] = useState("");
+  const [competitor, setCompetitor] = useState("");
 
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
@@ -14,42 +14,42 @@ function FormPage() {
   const getAgeGroup = (value) => {
     switch (parseInt(value, 10)) {
       case 0:
-        return 'Children';
+        return "Children";
       case 50:
-        return 'Teenager';
+        return "Teenager";
       case 100:
-        return 'Adults';
+        return "Adults";
       default:
-        return '';
+        return "";
     }
   };
 
   const handleSubmit = async () => {
     const formData = {
-        productDescription,
-        customerSegment,
-        adLocation,
-        ageGroup: getAgeGroup(sliderValue),
-        competitor,
-      };
+      productDescription,
+      customerSegment,
+      adLocation,
+      ageGroup: getAgeGroup(sliderValue),
+      competitor,
+    };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/ads-details/', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:8000/api/ads-details/", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
-      console.log('Form submitted successfully:', data);
+      console.log("Form submitted successfully:", data);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     }
   };
 
@@ -111,29 +111,6 @@ function FormPage() {
         <div className="form-fields flex flex-col mt-5">
           <div className="form-fields-container">
             <div className="form-fields-header text-left">
-              What's your target age group?
-            </div>
-            <div className="form-fields-input">
-              <input
-                type="range"
-                min={0}
-                max="100"
-                value={sliderValue}
-                onChange={handleSliderChange}
-                className="range range-xs mt-5"
-                step="25"
-              />
-              <div className="flex justify-between px-2 text-xs mt-2">
-                <span>Children</span>
-                <span>Teenager</span>
-                <span>Adults</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="form-fields flex flex-col mt-5">
-          <div className="form-fields-container">
-            <div className="form-fields-header text-left">
               Enter your potential competitor:
             </div>
             <div className="form-fields-input flex items-center">
@@ -148,7 +125,7 @@ function FormPage() {
           </div>
         </div>
         <button
-          className="btn btn-sm max-w-xs btn-primary text-white rounded-lg max-w-[150px] mt-5"
+          className="btn btn-sm max-w-xs btn-primary text-white rounded-lg max-w-[120px] mt-5"
           onClick={handleSubmit}
         >
           Start Analysis
